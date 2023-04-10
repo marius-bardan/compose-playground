@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WeatherAlerts</string>
+    <string name="generic_error">Something went wrong</string>
+    <string name="event_name">Name: %1$s</string>
+    <string name="event_source">Source: %1$s</string>
+    <string name="event_onset">Onset: %1$s</string>
+    <string name="event_expires">Expires: %1$s</string>
+    <string name="event_severity">Severity: %1$s</string>
+    <string name="event_certainty">Certainty: %1$s</string>
+    <string name="event_urgency">Urgency: %1$s</string>
+    <string name="event_description">Description: %1$s</string>
+    <string name="event_instructions">Instructions: %1$s</string>
+    <string name="event_zones">Affected Zones: %1$s</string>
+</resources>
