@@ -1,7 +1,12 @@
 package com.brd.weatheralerts.presentation.screens
 
+import android.graphics.Typeface
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.StyleSpan
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -50,11 +55,16 @@ fun AlertDetails(state: AlertDetailsUiState) {
                     .fillMaxWidth()
                     .offset { IntOffset(imageOffsetX.roundToInt(), imageOffsetY.roundToInt()) }
                     .pointerInput(Unit) {
-                        detectDragGestures { change, dragAmount ->
-                            change.consume()
-                            imageOffsetX += dragAmount.x
-                            imageOffsetY += dragAmount.y
-                        }
+                        detectDragGesturesAfterLongPress(
+                            onDrag = { change, dragAmount ->
+                                change.consume()
+                                imageOffsetX += dragAmount.x
+                                imageOffsetY += dragAmount.y
+                            },
+                            onDragEnd = {
+                                imageOffsetX = 0f
+                                imageOffsetY = 0f
+                            })
                     }
             )
 
